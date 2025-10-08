@@ -1,0 +1,341 @@
+/* =============================================
+   ONG MÃOS AMIGAS — STYLE GLOBAL (PÁGS 1–5)
+   Stylesheet único pra organizar tudo bonitinho
+   ============================================= */
+
+/* ------------------------
+   RESET + BASE
+-------------------------*/
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;     /* empurra o footer pro fim */
+  min-height: 100svh;         /* vh que respeita barras do mobile */
+}
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+:focus-visible { outline: 3px solid var(--secondary); outline-offset: 2px; }
+
+/* ------------------------
+   DESIGN TOKENS
+-------------------------*/
+:root {
+  --primary: #16a34a;   /* verde principal */
+  --primary-700: #15803d;
+  --secondary: #2563eb; /* azul de apoio */
+  --accent: #22c55e;    /* verde claro pra detalhes */
+  --bg: #f3f4f6;        /* cinza clarinho de fundo */
+  --card: #ffffff;      /* branco dos cards */
+  --text: #111827;      /* quase preto */
+  --muted: #6b7280;     /* cinza texto secundário */
+  --border: #e5e7eb;    /* cinza bordas */
+  --danger: #ef4444;
+  --warning: #f59e0b;
+  --success: #10b981;
+  --shadow: 0 4px 18px rgba(0,0,0,.08);
+  --radius: 16px;       /* cantos arredondados padrão */
+  --space: clamp(0.8rem, 1.5vw, 1.2rem);
+  --wrap: 1080px;       /* largura máxima combinada */
+}
+
+/* ------------------------
+   WRAPPER UTIL
+-------------------------*/
+.wrap { width: min(100% - 2rem, var(--wrap)); margin-inline: auto; }
+
+/* ------------------------
+   NAVBAR (HEADER)
+-------------------------*/
+.navbar {
+  position: sticky; top: 0; z-index: 50;
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+.navbar .wrap { display: flex; align-items: center; gap: 1rem; padding: .75rem 0; }
+.brand { display: inline-flex; align-items: center; gap: .6rem; font-weight: 700; }
+.brand .logo { width: 40px; height: 40px; object-fit: contain; }
+.spacer { flex: 1; }
+.links { display: flex; gap: .8rem; align-items: center; }
+.links a { padding: .5rem .8rem; border-radius: 999px; color: var(--muted); }
+.links a:hover { background: #f8fafc; color: var(--text); }
+.links a.active, .links a[aria-current="page"] { background: #eef2ff; color: #1e40af; }
+
+/* Burger */
+.burger { display: none; font-size: 1.5rem; background: transparent; border: 0; cursor: pointer; }
+
+/* Menu mobile */
+@media (max-width: 860px) {
+  .burger { display: inline-flex; }
+  .links {
+    display: none; position: absolute; inset: auto 0 0 0;
+    background: var(--card); padding: 1rem; border-top: 1px solid var(--border);
+  }
+  .links.open { display: grid; grid-template-columns: 1fr; }
+}
+
+/* ------------------------
+   HERO
+-------------------------*/
+.hero {
+  background: linear-gradient(180deg, rgba(22,163,74,.08), rgba(37,99,235,.06));
+  padding: clamp(2rem, 4vw, 4rem) 0; 
+}
+.hero.hero--sm { padding: clamp(1.25rem, 3vw, 2rem) 0; }
+
+.hero .grid {
+  display: grid; align-items: center; gap: 2rem;
+  grid-template-columns: repeat(12, 1fr);
+}
+.hero .col-text { grid-column: span 7; }
+.hero .col-media { grid-column: span 5; }
+.hero h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .5rem; }
+.hero p.lead { color: var(--muted); font-size: clamp(1rem, 2vw, 1.125rem); margin: 0 0 1rem; }
+@media (max-width: 900px) {
+  .hero .col-text, .hero .col-media { grid-column: 1 / -1; }
+}
+
+/* ------------------------
+   BUTTONS
+-------------------------*/
+.btn { 
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  padding: .75rem 1.1rem; border-radius: 999px; border: 1px solid transparent;
+  font-weight: 600; cursor: pointer; transition: transform .06s ease, background .2s ease, color .2s ease;
+}
+.btn:hover { transform: translateY(-1px); }
+.btn:active { transform: translateY(0); }
+.btn.primary { background: var(--primary); color: #fff; }
+.btn.primary:hover { background: var(--primary-700); }
+.btn.secondary { background: #fff; color: var(--text); border-color: var(--border); }
+.btn.ghost { background: transparent; color: var(--text); }
+.btn.block { width: 100%; }
+
+/* Chips (página 5) */
+.btn-chip {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .55rem .9rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+.btn-chip:hover { background: #f8fafc; }
+
+/* ------------------------
+   SECTIONS GENÉRICAS
+-------------------------*/
+.section { padding: clamp(2rem, 5vw, 3.5rem) 0; }
+.section .title { font-size: clamp(1.4rem, 3vw, 2rem); margin: 0 0 .25rem; }
+.section .subtitle { color: var(--muted); margin: 0 0 1.5rem; }
+
+/* Grids utilitárias */
+.grid { display: grid; gap: 1.2rem; }
+.grid-2 { display: grid; gap: 1.2rem; grid-template-columns: repeat(2, minmax(0,1fr)); }
+.grid-3 { display: grid; gap: 1.2rem; grid-template-columns: repeat(3, minmax(0,1fr)); }
+.grid-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+@media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 640px) {
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+  .grid-5 { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* Cards */
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  padding: 1rem;
+}
+.card h3 { margin: 0 0 .4rem; font-size: 1.1rem; }
+.card p { margin: 0; color: var(--muted); }
+.card .media { aspect-ratio: 16 / 9; background: #f8fafc; display: grid; place-items: center; color: var(--muted); }
+
+/* ------------------------
+   PÁG 2 — SOBRE (missão/visão/valores)
+-------------------------*/
+.feature-list { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.feature { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1rem; display: grid; align-items: start; gap: .5rem; box-shadow: var(--shadow); }
+.feature .icon { width: 48px; height: 48px; border-radius: 12px; display: grid; place-items: center; background: rgba(22,163,74,.12); color: var(--primary); font-weight: 700; }
+
+/* ------------------------
+   FORMULÁRIOS (págs 3 e 4)
+-------------------------*/
+form { display: grid; gap: 1rem; }
+.form-grid { display: grid; gap: 1rem; grid-template-columns: repeat(12, 1fr); }
+.col-12 { grid-column: span 12; }
+.col-6 { grid-column: span 6; }
+.col-4 { grid-column: span 4; }
+.col-3 { grid-column: span 3; }
+@media (max-width: 860px) {
+  .col-6, .col-4, .col-3 { grid-column: span 12; }
+}
+
+.label { font-weight: 600; display: inline-block; margin-bottom: .35rem; }
+.input, select, textarea {
+  width: 100%; background: #fff; color: var(--text);
+  border: 1px solid var(--border); border-radius: 12px;
+  padding: .75rem .9rem; outline: none; transition: border-color .2s, box-shadow .2s;
+}
+.input:focus, select:focus, textarea:focus { border-color: var(--primary); box-shadow: 0 0 0 4px rgba(22,163,74,.15); }
+textarea { min-height: 140px; resize: vertical; }
+
+/* Estado nativo (requerido/validação) */
+.input:required:invalid, select:required:invalid, textarea:required:invalid { border-color: #fca5a5; }
+.input:required:valid, select:required:valid, textarea:required:valid { border-color: #86efac; }
+
+/* Ajuda/erros */
+.help { color: var(--muted); font-size: .9rem; margin-top: .35rem; }
+.error { color: var(--danger); font-size: .9rem; }
+
+/* Fieldset + Legend */
+fieldset { border: 1px solid var(--border); border-radius: 14px; padding: 1rem; background: #fff; }
+legend { padding: .2rem .6rem; border-radius: 999px; background: rgba(22,163,74,.1); color: var(--primary); font-weight: 700; }
+
+/* Grids para checks/radios */
+.checkbox-grid, .radio-grid { display: grid; gap: .6rem; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); }
+.checkline, .radioline { display: flex; align-items: center; gap: .6rem; }
+input[type="checkbox"], input[type="radio"] { accent-color: var(--primary); width: 18px; height: 18px; }
+
+/* helpers de form usados na pág 5 */
+.form-row { display: grid; gap: .35rem; }
+.check { display: inline-flex; align-items: center; gap: .6rem; }
+
+/* Upload acessível */
+.input-file { position: relative; display: inline-flex; align-items: center; gap: .6rem; }
+.input-file input[type="file"] { position: absolute; inset: 0; opacity: 0; cursor: pointer; }
+.input-file .fake { padding: .6rem .9rem; border-radius: 999px; border: 1px dashed var(--border); background: #fff; }
+
+/* ------------------------
+   TABELAS
+-------------------------*/
+.table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+.table th, .table td { padding: .8rem; border-bottom: 1px solid var(--border); text-align: left; }
+.table thead th { background: #f8fafc; color: var(--muted); font-weight: 700; }
+.table tbody tr:hover { background: #fafafa; }
+
+/* ------------------------
+   AVISOS/ALERTAS
+-------------------------*/
+.alert { border-radius: 12px; padding: .8rem 1rem; border: 1px solid; background: #fff; }
+.alert.success { border-color: #86efac; }
+.alert.warn { border-color: #fde68a; }
+.alert.danger { border-color: #fecaca; }
+
+/* ------------------------
+   FOOTER — sempre lá embaixo
+-------------------------*/
+footer {
+  margin-top: auto; 
+  background: #0f172a; /* azul-escuro quase preto */
+  color: #e5e7eb;
+  padding: 1.2rem 0;
+}
+footer .wrap { display: grid; gap: .6rem; align-items: center; grid-template-columns: 1fr auto; }
+footer .brandline { display: flex; align-items: center; gap: .6rem; }
+footer .brandline img { width: 28px; height: 28px; object-fit: contain; }
+footer .small { color: #94a3b8; font-size: .9rem; }
+footer .social { display: inline-flex; gap: .6rem; }
+footer .social a { padding: .4rem .6rem; background: rgba(255,255,255,.06); border-radius: 8px; }
+@media (max-width: 720px) { footer .wrap { grid-template-columns: 1fr; } }
+
+/* ------------------------
+   UTILITÁRIAS
+-------------------------*/
+.center { text-align: center; }
+.muted { color: var(--muted); }
+.badge { display: inline-flex; gap: .4rem; align-items: center; padding: .25rem .6rem; background: #eef2ff; color: #3730a3; border-radius: 999px; font-weight: 600; }
+.hr { height: 1px; background: var(--border); border: 0; }
+.mt-1{ margin-top:.5rem } .mt-2{ margin-top:1rem } .mt-3{ margin-top:1.5rem }
+.mb-1{ margin-bottom:.5rem } .mb-2{ margin-bottom:1rem } .mb-3{ margin-bottom:1.5rem }
+.p-1{ padding:.5rem } .p-2{ padding:1rem } .p-3{ padding:1.5rem }
+
+/* Pilha vertical levinha (p/ botões do Mercado Pago etc.) */
+.stack { display: grid; gap: .6rem; }
+
+/* UL sem marcadores (dados bancários) */
+.clean { list-style: none; padding: 0; margin: 0; }
+.clean li { margin: .25rem 0; }
+
+/* ------------------------
+   LAYOUTS ESPECÍFICOS (1–4)
+-------------------------*/
+/* PÁGINA 1 (Home) */
+.home-stats { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); }
+.stat { background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: 1rem; text-align: center; box-shadow: var(--shadow); }
+.stat .num { font-size: 1.6rem; font-weight: 800; color: var(--primary); }
+
+/* PÁGINA 2 (Sobre) */
+.timeline { position: relative; border-left: 3px solid rgba(22,163,74,.25); padding-left: 1rem; display: grid; gap: .8rem; }
+.timeline .item { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: .8rem 1rem; }
+
+/* PÁGINA 3 (Projetos/Inscrição) */
+.project-card { display: grid; grid-template-columns: 120px 1fr; gap: 1rem; align-items: center; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: .8rem; }
+.project-card .thumb { width: 120px; height: 80px; background: #f1f5f9; border-radius: 10px; }
+@media (max-width: 640px) { .project-card { grid-template-columns: 1fr; } }
+
+/* PÁGINA 4 (Voluntariado/Contato/Newsletter) */
+.newsletter { display: grid; gap: .6rem; grid-template-columns: 1fr auto; background: #fff; border: 1px solid var(--border); border-radius: 14px; padding: .8rem; }
+.newsletter input[type="email"] { border-radius: 999px; }
+.newsletter .btn { border-radius: 999px; }
+@media (max-width: 520px) { .newsletter { grid-template-columns: 1fr; } }
+
+/* Banners/Chips de seção */
+.section-chip { display: inline-flex; align-items: center; gap: .5rem; padding: .35rem .7rem; border-radius: 999px; background: rgba(37,99,235,.08); color: #1e40af; font-weight: 700; }
+
+/* ------------------------
+   PÁGINA 5 — DOAÇÕES
+-------------------------*/
+.grafico-doacoes {
+  text-align: center;
+  padding: 40px 20px;
+  background: var(--card);       /* harmoniza com o tema */
+  border-radius: 20px;
+  margin: 40px auto;
+  max-width: 800px;
+}
+.grafico-doacoes h2 { color: #1e88e5; margin-bottom: 10px; }
+.grafico-doacoes p { color: #444; margin-bottom: 20px; }
+.grafico-container { position: relative; height: 400px; margin: 0 auto; }
+.grafico-doacoes small { display: block; margin-top: 10px; color: #666; }
+
+/* ------------------------
+   MODAIS (se usar)
+-------------------------*/
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,.5); display: none; place-items: center; padding: 1rem; }
+.modal.open { display: grid; }
+.modal .panel { width: min(560px, 100%); background: #fff; border-radius: 16px; border: 1px solid var(--border); box-shadow: var(--shadow); overflow: hidden; }
+.modal .panel header { padding: 1rem; border-bottom: 1px solid var(--border); font-weight: 700; }
+.modal .panel .content { padding: 1rem; }
+
+/* ------------------------
+   MOTION & PRINT
+-------------------------*/
+@media (prefers-reduced-motion: no-preference) { 
+  .btn { transition: transform .06s ease, background .2s ease, color .2s ease, box-shadow .2s ease; }
+  .card:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(0,0,0,.10); }
+}
+
+@media print {
+  .navbar, .burger, .btn, footer { display: none !important; }
+  .card, .feature, .timeline .item, fieldset, .table { box-shadow: none; }
+  body { background: #fff; }
+}
+
+/* ------------------------
+   EXTRAS DOAÇÃO (opcional)
+-------------------------*/
+.doacao-extra p { font-size: 1.1rem; color: #333; }
+.doacao-extra .btn {
+  background-color: #0077cc; color: #fff; border: none;
+  padding: 0.6rem 1.4rem; border-radius: 6px; transition: background-color 0.3s;
+}
+.doacao-extra .btn:hover { background-color: #005fa3; }
