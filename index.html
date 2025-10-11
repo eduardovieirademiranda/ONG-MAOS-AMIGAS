@@ -3,132 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Site fictício da ONG Mãos Amigas">
-  <meta name="author" content="Eduardo Vieira de Miranda">
-  <title>ONG Mãos Amigas</title>
-  <link rel="stylesheet" href="style.css">
+  <title>ONG Mãos Amigas – Início</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER / NAVBAR -->
-  <nav class="navbar">
-    <div class="wrap">
-      <a href="index.html" class="brand" aria-label="ONG Mãos Amigas - Início">
-        <img class="logo" src="imagens/logo.png" alt="Logo ONG Mãos Amigas">
-        <span>Mãos Amigas</span>
-      </a>
-
-      <div class="spacer"></div>
-
-      <button class="burger" id="menuToggle" aria-label="Abrir menu">☰</button>
-
-      <div class="links" id="menuLinks">
-        <a href="index.html">Início</a>
-        <a href="projetos.html">Projetos</a>
-        <a href="cadastro.html">Cadastro</a>
-        <a href="doacoes.html">Doaçoes</a>
-      </div>
-    </div>
-  </nav>
-
-  <!-- Marca link ativo e toggle mobile -->
-  <script>
-    (function () {
-      var path = location.pathname.split('/').pop() || 'index.html';
-      document.querySelectorAll('.navbar .links a').forEach(function(a){
-        if (a.getAttribute('href') === path) a.classList.add('active');
-      });
-      var btn = document.getElementById('menuToggle');
-      var links = document.getElementById('menuLinks');
-      btn.addEventListener('click', function(){ links.classList.toggle('open'); });
-    })();
-  </script>
-
-  <header class="hero">
-    <div class="container">
-      <h1>ONG Mãos Amigas</h1>
-      <img src="imagens/ONGG.jpg" alt="Logo ONG Mãos Amigas" width="150"> 
-      <p class="frase-impacto">“A verdadeira força está em estender a mão a quem mais precisa”.</p>
-    </div>
+  <header>
+    <nav>
+      <a href="index.html"><h1>ONG Mãos Amigas</h1></a>
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="projetos.html">Projetos</a></li>
+        <li><a href="voluntario.html">Voluntariado</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main id="conteudo" class="container">
-
-    <!-- Sessão de Introdução -->
-    <section aria-labelledby="sobre-titulo">
-      <h2 id="sobre-titulo">Sobre a ONG</h2>
-      <p><strong>Texto de apresentação</strong></p>
-      <p>
-        A ONG Mãos Amigas nasceu com o propósito de transformar solidariedade em ação.
-        <strong>Somos uma organização sem fins lucrativos</strong> que acredita no poder
-        da união para promover mudanças reais na vida das pessoas em situação de vulnerabilidade.
-      </p>
-      <p>
-        Nosso trabalho é voltado para apoio social, educacional e humano, criando oportunidades
-        que ajudam a construir um futuro mais digno e igualitário. Atuamos com projetos de inclusão,
-        campanhas de arrecadação e atividades comunitárias que fortalecem laços e geram impacto positivo.
-      </p>
+  <main>
+    <section>
+      <h2>Juntos Podemos Transformar Vidas</h2>
+      <p>A ONG Mãos Amigas atua em projetos sociais voltados para famílias em situação de vulnerabilidade. Nosso objetivo é oferecer oportunidades e esperança.</p>
+      <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas">
     </section>
 
-    <!-- Missão, Visão, Valores -->
-    <section aria-labelledby="mvv-titulo">
-      <h2 id="mvv-titulo">Nossa identidade</h2>
-
-      <h3>Missão</h3>
-      <p>Transformar solidariedade em ação concreta, apoiando comunidades em situação de vulnerabilidade social.</p>
-
-      <h3>Visão</h3>
-      <p>Construir uma sociedade mais justa e inclusiva, onde cada pessoa tenha oportunidade de viver com dignidade.</p>
-
-      <h3>Valores</h3>
-      <p>Empatia, compromisso, responsabilidade social, transparência e respeito à diversidade.</p>
+    <section>
+      <h2>Destaques</h2>
+      <article>
+        <h3>Projeto Esperança</h3>
+        <p>Atendimento a crianças em situação de risco, com atividades educativas e esportivas.</p>
+      </article>
     </section>
-
-    <!-- Chamadas para ação -->
-    <section class="cta-grid" aria-labelledby="cta-titulo">
-      <h2 id="cta-titulo" class="sr-only">Navegação rápida</h2>
-      <p>Para saber mais sobre a organização: <a href="cadastro.html" class="botao">Inscreva-se</a></p>
-      <p>Conheça nossos projetos: <a href="projetos.html" class="botao">Ver projetos</a></p>
-      <p>Quer ser voluntário(a)? <a href="cadastro.html" class="botao">Quero participar</a></p>
-      <p>Precisa falar com a gente? <a href="cadastro.html#contato" class="botao">Contato</a></p>
-    </section>
-
   </main>
 
-  <!-- Rodapé -->
-  <footer class="site-footer">
-    <div class="wrap">
-      <div class="col-6">
-        <h4>ONG Mãos Amigas</h4>
-        <p>Promovendo oportunidades, inclusão e desenvolvimento comunitário.</p>
-        <p>São Paulo • Sapopemba / Madalena</p>
-        <p>CNPJ: 00.000.000/0000-00 (fictício)</p>
-      </div>
-
-      <div class="col-4">
-        <h4>Links úteis</h4>
-        <p><a href="index.html">Início</a></p>
-        <p><a href="projetos.html">Projetos</a></p>
-        <p><a href="cadastro.html">Cadastro</a></p>
-      </div>
-
-      <div class="col-4">
-        <h4>Contato</h4>
-        <p><a href="mailto:contato@maosamigas.org">contato@maosamigas.org</a></p>
-        <p><a href="#" aria-label="Instagram">Instagram</a></p>
-        <p><a href="#" aria-label="Facebook">Facebook</a></p>
-        <p><a href="#" aria-label="YouTube">YouTube</a></p>
-      </div>
-    </div>
-    <div class="copyright">
-      © <span id="anoAtual"></span> Mãos Amigas. Todos os direitos reservados.
-    </div>
+  <footer>
+    <p>&copy; 2025 ONG Mãos Amigas. Todos os direitos reservados.</p>
   </footer>
-
-  <script>
-    // ano automático no rodapé
-    document.getElementById('anoAtual').textContent = new Date().getFullYear();
-  </script>
 
 </body>
 </html>
