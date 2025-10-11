@@ -34,9 +34,7 @@ nav {
   justify-content: space-between;
 }
 
-nav h1 {
-  font-size: 1.5rem;
-}
+nav h1 { font-size: 1.5rem; }
 
 nav ul {
   list-style: none;
@@ -50,9 +48,7 @@ nav a {
   font-weight: bold;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
+nav a:hover { text-decoration: underline; }
 
 /* CONTEÚDO PRINCIPAL */
 main {
@@ -70,9 +66,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-section {
-  margin-bottom: 30px;
-}
+section { margin-bottom: 30px; }
 
 article {
   background-color: #e9ecef;
@@ -81,12 +75,19 @@ article {
   border-radius: 4px;
 }
 
-/* IMAGENS */
+/* IMAGENS — largura fixa 250px, altura automática */
 img {
   display: block;
-  max-width: 100%;
+  width: 250px;   /* tamanho pedido */
+  height: auto;   /* mantém proporção */
   margin: 15px auto;
   border-radius: 4px;
+}
+
+/* Classe opcional, caso queira aplicar só em algumas imagens */
+.img-250 {
+  width: 250px;
+  height: auto;
 }
 
 /* FORMULÁRIOS */
@@ -109,10 +110,7 @@ legend {
   padding: 0 6px;
 }
 
-label {
-  font-weight: bold;
-  margin-top: 5px;
-}
+label { font-weight: bold; margin-top: 5px; }
 
 input, button {
   padding: 8px;
@@ -121,9 +119,7 @@ input, button {
   font-size: 1rem;
 }
 
-input:focus {
-  outline: 2px solid #0077b6;
-}
+input:focus { outline: 2px solid #0077b6; }
 
 /* BOTÃO */
 button {
@@ -134,9 +130,7 @@ button {
   margin-top: 10px;
 }
 
-button:hover {
-  background-color: #005f8c;
-}
+button:hover { background-color: #005f8c; }
 
 /* RODAPÉ */
 footer {
