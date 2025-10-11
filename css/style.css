@@ -60,13 +60,9 @@ main {
   border-radius: 6px;
 }
 
-/* TÍTULOS E SEÇÕES */
-h2 {
-  color: #0077b6;
-  margin-bottom: 10px;
-}
-
+/* SEÇÕES E TÍTULOS */
 section { margin-bottom: 30px; }
+h2 { color: #0077b6; margin-bottom: 10px; }
 
 article {
   background-color: #e9ecef;
@@ -75,19 +71,13 @@ article {
   border-radius: 4px;
 }
 
-/* IMAGENS — largura fixa 250px, altura automática */
+/* IMAGENS — FIXO 250 PX */
 img {
-  display: block;
-  width: 250px;   /* tamanho pedido */
-  height: auto;   /* mantém proporção */
-  margin: 15px auto;
-  border-radius: 4px;
-}
-
-/* Classe opcional, caso queira aplicar só em algumas imagens */
-.img-250 {
-  width: 250px;
-  height: auto;
+  display: block !important;
+  width: 250px !important;
+  height: auto !important;
+  margin: 15px auto !important;
+  border-radius: 4px !important;
 }
 
 /* FORMULÁRIOS */
