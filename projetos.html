@@ -4,58 +4,67 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Projetos – ONG Mãos Amigas</title>
- <link rel="stylesheet" href="css/style.css">
-
+  <link rel="stylesheet" href="css/style.css">
+</head>
 <body>
 
+  <!-- CABEÇALHO -->
   <header>
-    <nav>
-      <a href="index.html"><h1>ONG Mãos Amigas</h1></a>
-      <ul>
-        <li><a href="index.html">Início</a></li>
-        <li><a href="projetos.html">Projetos</a></li>
-        <li><a href="cadastro.html">Voluntariado</a></li>
-      </ul>
+    <nav class="navbar">
+      <a href="index.html" class="brand">
+        <img src="imagens/logo.png" alt="Logo da ONG Mãos Amigas" class="logo">
+        <span>ONG Mãos Amigas</span>
+      </a>
+
+      <div class="links">
+        <a href="index.html">Início</a>
+        <a href="projetos.html" aria-current="page" class="ativo">Projetos</a>
+        <a href="cadastro.html">cadastro</a>
+      </div>
     </nav>
   </header>
 
+  <!-- CONTEÚDO PRINCIPAL -->
   <main>
     <section>
-      <h2>Nossos Projetos</h2>
+      <h2 class="titulo">Nossos Projetos</h2>
       <p>Conheça algumas das ações realizadas pela nossa ONG.</p>
-     <img src="imagens/esporte-saude.jpg" alt="Crianças participando de atividades do projeto social" class="img-250">
-
+      <img src="imagens/esporte-saude.jpg" alt="Crianças participando de atividades do projeto social" class="img-250">
 
       <article>
-        <h3>Projeto Esperança</h3>
+        <h3 class="subtitulo">Projeto Esperança</h3>
         <p>Atividades educativas e esportivas para crianças e adolescentes.</p>
       </article>
 
       <article>
-        <h3>Projeto Alimentar</h3>
+        <h3 class="subtitulo">Projeto Alimentar</h3>
         <p>Distribuição mensal de alimentos e kits de higiene.</p>
       </article>
 
       <article>
-        <h3>Projeto Reciclar</h3>
+        <h3 class="subtitulo">Projeto Reciclar</h3>
         <p>Coleta de materiais recicláveis e conscientização ambiental.</p>
       </article>
     </section>
-    <!-- COMO DOAR -->
-<article>
-  <h3>Como Doar</h3>
-  <p>Você pode contribuir com nossos projetos de várias formas. Cada doação ajuda a transformar vidas!</p>
-  <ul>
-    <li><strong>PIX:</strong> 11.222.333/0011-44</li>
-    <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
-    <li><strong>Chave PIX (opcional):</strong> eduardo.mi.2005@gmail.com</li>
-  </ul>
-  <p>Ou entre em contato conosco para outras formas de ajuda.</p>
-</article>
-<img src="imagens/doacoes.jpg" alt="Pessoa fazendo uma doação" class="img-250">
 
+    <!-- COMO DOAR -->
+    <section>
+      <h2 class="titulo">Como Doar</h2>
+      <article>
+        <h3 class="subtitulo">Contribua e Faça a Diferença</h3>
+        <p>Você pode contribuir com nossos projetos de várias formas. Cada doação ajuda a transformar vidas!</p>
+        <ul>
+          <li><strong>PIX:</strong> 11.222.333/0011-44</li>
+          <li><strong>E-mail:</strong> ongmaosamigas@gmail.com</li>
+          <li><strong>Chave PIX (opcional):</strong> eduardo.mi.2005@gmail.com</li>
+        </ul>
+        <p>Ou entre em contato conosco para outras formas de ajuda.</p>
+      </article>
+      <img src="imagens/doacoes.jpg" alt="Pessoa fazendo uma doação" class="img-250">
+    </section>
   </main>
 
+  <!-- RODAPÉ -->
   <footer>
     <p>&copy; 2025 ONG Mãos Amigas. Todos os direitos reservados.</p>
   </footer>
