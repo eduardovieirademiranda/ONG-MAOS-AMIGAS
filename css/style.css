@@ -1,86 +1,193 @@
-/* ========================================
-   ESTILO BÁSICO — ATIVIDADE 1 (HTML5)
-   ONG MÃOS AMIGAS
-   ======================================== */
+/* ==============================================
+   ONG MÃOS AMIGAS — STYLE GLOBAL
+   Organização: Base, Cabeçalho, Conteúdo, Formulário, Rodapé
+============================================== */
 
-/* RESET */
+@import url('https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&display=swap');
+
+/* =========================================================
+   RESET
+   Remove margens e espaçamentos padrão aplicados pelo navegador.
+   Define o box-sizing como border-box para facilitar o controle
+   de larguras e espaçamentos durante o desenvolvimento.
+========================================================= */
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* BASE GERAL */
+html {
+  scroll-behavior: smooth; /* rolagem suave entre seções */
+}
+
+/* =========================================================
+   BASE GERAL
+   Define tipografia, cores e line-height.
+   Mantém o estilo coerente entre todas as páginas.
+========================================================= */
+
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Cabin", sans-serif;
   background-color: #f4f4f4;
-  color: #333;
+  color: #798252;
   line-height: 1.6;
 }
 
-/* CABEÇALHO E MENU */
+/* =========================================================
+   CABEÇALHO / MENU
+========================================================= */
+
 header {
   background-color: #0077b6;
   color: #fff;
-  padding: 15px 0;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav {
-  width: 90%;
-  max-width: 1000px;
+.navbar {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  gap: 1rem;
 }
 
-nav h1 { font-size: 1.5rem; }
-
-nav ul {
-  list-style: none;
+.navbar .brand {
   display: flex;
-  gap: 15px;
-}
-
-nav a {
-  color: #fff;
+  align-items: center;
+  gap: 8px;
   text-decoration: none;
-  font-weight: bold;
+  color: #fff;
 }
 
-nav a:hover { text-decoration: underline; }
+/* ===== LOGO ===== */
+.navbar .logo {
+  width: 60px !important;      /* controla o tamanho da logo */
+  height: auto !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+  display: inline-block !important;
+}
 
-/* CONTEÚDO PRINCIPAL */
+/* ===== LINKS ===== */
+.navbar .links {
+  display: flex;
+  gap: 0.75rem;
+  margin-left: auto;
+  flex-wrap: wrap;
+}
+
+.navbar .links a {
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.5rem;
+  transition: background 0.3s;
+}
+
+.navbar .links a:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.navbar .links a.ativo,
+.navbar .links a[aria-current="page"] {
+  background: #fff;
+  color: #0077b6;
+}
+
+/* ===== RESPONSIVO MENU ===== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* =========================================================
+   CONTEÚDO PRINCIPAL / ESTRUTURA
+========================================================= */
+
 main {
-  width: 90%;
-  max-width: 1000px;
-  margin: 30px auto;
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 6px;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 1rem;
 }
 
-/* SEÇÕES E TÍTULOS */
-section { margin-bottom: 30px; }
-h2 { color: #0077b6; margin-bottom: 10px; }
+main section,
+main article {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+/* =========================================================
+   TÍTULOS E TEXTOS
+========================================================= */
+
+h2.titulo {
+  color: #3A8DDE;
+  font-size: 1.5rem;
+  font-weight: 700;
+  display: inline-block;
+  padding-bottom: 6px;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+h3.subtitulo {
+  color: #5CB3FF;
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0.625rem;
+}
+
+/* =========================================================
+   ARTIGOS / BLOCOS
+========================================================= */
 
 article {
   background-color: #e9ecef;
   padding: 15px;
-  margin-bottom: 10px;
   border-radius: 4px;
+  border: 1px solid #dee2e6;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
 }
 
-/* IMAGENS — FIXO 250 PX */
+article p {
+  color: #444;
+  text-align: justify;
+}
+
+/* =========================================================
+   IMAGENS
+========================================================= */
+
+/* Imagens globais (responsivas) */
 img {
-  display: block !important;
-  width: 250px !important;
-  height: auto !important;
-  margin: 15px auto !important;
-  border-radius: 4px !important;
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
-/* FORMULÁRIOS */
+/* Imagens da página de cadastro */
+.cadastro img:not(.logo) {
+  width: 300px;
+  max-width: 100%;
+  height: auto;
+  margin: 15px auto;
+  border-radius: 6px;
+}
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
 form {
   display: flex;
   flex-direction: column;
@@ -100,29 +207,58 @@ legend {
   padding: 0 6px;
 }
 
-label { font-weight: bold; margin-top: 5px; }
+label {
+  font-weight: bold;
+  margin-top: 5px;
+}
 
-input, button {
+input,
+button,
+select,
+textarea {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
 }
 
-input:focus { outline: 2px solid #0077b6; }
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid #0077b6;
+}
 
-/* BOTÃO */
+/* Checkboxes e radios */
+.options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 8px;
+}
+
+.options-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* Botão */
 button {
   background-color: #0077b6;
   color: #fff;
   border: none;
   cursor: pointer;
-  margin-top: 10px;
+  font-weight: bold;
+  transition: background 0.3s;
 }
 
-button:hover { background-color: #005f8c; }
+button:hover {
+  background-color: #005f8d;
+}
 
-/* RODAPÉ */
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
 footer {
   background-color: #333;
   color: #fff;
@@ -131,3 +267,7 @@ footer {
   margin-top: 30px;
   font-size: 0.9rem;
 }
+
+/* =========================================================
+   FIM DO STYLE.CSS — Atividade 2 (CSS3)
+========================================================= */
