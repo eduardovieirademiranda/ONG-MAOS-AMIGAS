@@ -37,62 +37,87 @@
       <form>
         <!-- DADOS PESSOAIS -->
         <fieldset>
-  <legend>Dados Pessoais</legend>
+  <!-- Dados Pessoais (com Data de Nascimento) -->
+      <fieldset>
+        <legend>Dados Pessoais</legend>
 
-  <label for="nome">Nome completo</label>
-  <input 
-    type="text" 
-    id="nome" 
-    name="nome" 
-    placeholder="Digite seu nome completo" 
-    pattern="^[A-Za-zÀ-ÿ\s]{5,}$" 
-    title="Digite seu nome completo (apenas letras)" 
-    required 
-  />
+        <label for="nome">Nome completo</label>
+        <input type="text" id="nome" name="nome"
+              placeholder="Digite seu nome completo"
+              pattern="^[A-Za-zÀ-ÿ\s]{5,}$"
+              title="Digite seu nome completo (apenas letras)"
+              required />
 
         <label for="cpf">CPF</label>
-        <input 
-          type="text" 
-          id="cpf" 
-          name="cpf" 
-          placeholder="000.000.000-00" 
-          pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$" 
-          title="Use o formato 000.000.000-00" 
-          required 
-        />
+        <input type="text" id="cpf" name="cpf"
+              placeholder="000.000.000-00"
+              pattern="^\d{3}\.\d{3}\.\d{3}-\d{2}$"
+              title="Use o formato 000.000.000-00"
+              required />
 
         <label for="email">E-mail</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          placeholder="seuemail@exemplo.com" 
-          title="Digite um e-mail válido (ex: nome@dominio.com)" 
-          required 
-        />
+        <input type="email" id="email" name="email"
+              placeholder="seuemail@exemplo.com"
+              required />
 
         <label for="telefone">Telefone</label>
-        <input 
-          type="tel" 
-          id="telefone" 
-          name="telefone" 
-          placeholder="(11) 98888-7777" 
-          pattern="^\(?\d{2}\)?\s?(?:9\d{4}|\d{4})-\d{4}$" 
-          title="Use o formato (11) 98888-7777 ou (11) 8888-7777" 
-          required 
-        />
+        <input type="tel" id="telefone" name="telefone"
+              placeholder="(11) 98888-7777"
+              pattern="^\(?\d{2}\)?\s?(?:9\d{4}|\d{4})-\d{4}$"
+              title="Use o formato (11) 98888-7777 ou (11) 8888-7777"
+              required />
+
+        <label for="nascimento">Data de nascimento</label>
+        <input type="date" id="nascimento" name="nascimento" required />
+      </fieldset>
+
+      <!-- Endereço -->
+      <fieldset>
+        <legend>Endereço</legend>
 
         <label for="cep">CEP</label>
-        <input 
-          type="text" 
-          id="cep" 
-          name="cep" 
-          placeholder="00000-000" 
-          pattern="^\d{5}-\d{3}$" 
-          title="Use o formato 00000-000" 
-          required 
-        />
+        <input type="text" id="cep" name="cep"
+              placeholder="00000-000"
+              pattern="^\d{5}-\d{3}$"
+              title="Use o formato 00000-000"
+              required />
+
+        <label for="logradouro">Logradouro</label>
+        <input type="text" id="logradouro" name="logradouro"
+              placeholder="Rua/Avenida, etc."
+              minlength="3" required />
+
+        <label for="numero">Número</label>
+        <input type="text" id="numero" name="numero"
+              placeholder="123"
+              pattern="^\d+[A-Za-z]?$"
+              title="Informe o número (ex.: 123 ou 123A)"
+              required />
+
+        <label for="complemento">Complemento</label>
+        <input type="text" id="complemento" name="complemento"
+              placeholder="Apto, bloco, casa" required>
+
+        <label for="bairro">Bairro</label>
+        <input type="text" id="bairro" name="bairro"
+              minlength="2" required />
+
+        <label for="cidade">Cidade</label>
+        <input type="text" id="cidade" name="cidade"
+              minlength="2" required />
+
+        <label for="estado">Estado (UF)</label>
+        <select id="estado" name="estado" required>
+          <option value="" disabled selected>Selecione</option>
+          <option>AC</option><option>AL</option><option>AP</option><option>AM</option><option>BA</option>
+          <option>CE</option><option>DF</option><option>ES</option><option>GO</option><option>MA</option>
+          <option>MT</option><option>MS</option><option>MG</option><option>PA</option><option>PB</option>
+          <option>PR</option><option>PE</option><option>PI</option><option>RJ</option><option>RN</option>
+          <option>RS</option><option>RO</option><option>RR</option><option>SC</option><option>SP</option>
+          <option>SE</option><option>TO</option>
+        </select>
       </fieldset>
+
 
         <!-- DISPONIBILIDADE -->
         <fieldset>
