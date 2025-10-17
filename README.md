@@ -1,83 +1,34 @@
-# 🌿 ONG MÃOS AMIGAS
+# 🎨 ONG MÃOS AMIGAS — Atividade 2 (CSS3)
 
-Projeto desenvolvido para as **Atividades 1 e 2** da disciplina de **Desenvolvimento Web** (Cruzeiro do Sul Virtual).
-
----
-
-## 🧩 Estrutura Geral
-
-O site foi criado com o objetivo de simular o ambiente profissional de uma ONG fictícia — **MÃOS AMIGAS** — que realiza ações sociais em diferentes áreas da comunidade.
-
-- **Atividade 1:** Estrutura semântica em **HTML5**
-- **Atividade 2:** Estilização completa com **CSS3**
+Segunda etapa do projeto da disciplina de **Desenvolvimento Web**, com foco em **CSS3 e sistemas de design responsivo**.
 
 ---
 
-## 🏗️ Páginas do Projeto
+## 🧱 Estrutura
+Nesta atividade, foram aplicados conceitos avançados de CSS3 para aprimorar o visual e a usabilidade do site desenvolvido na Atividade 1 (HTML5).
 
-| Página | Descrição |
-|---------|------------|
-| `index.html` | Página inicial com apresentação da ONG e informações de contato. |
-| `sobre.html` | Mostra a história, missão, visão e valores da ONG. |
-| `projetos.html` | Exibe projetos sociais, formas de participar e como doar. |
-| `cadastro.html` | Formulário completo de cadastro para voluntários e doadores. |
-| `doacoes.html` | Explica as opções de doação (PIX, QR Code, etc.). |
+**Páginas contempladas:**
+- `index.html`
+- `projetos.html`
+- `cadastro.html`
 
----
-
-## 🎨 Estilos (Atividade 2)
-
-O layout foi construído utilizando **CSS3**, seguindo boas práticas de design responsivo.
-
-### Estrutura do CSS
-- **RESET:** Remove estilos padrão dos navegadores.
-- **BASE GERAL:** Define fontes, cores e comportamento do body.
-- **CABEÇALHO / MENU:** Navegação horizontal com flexbox.
-- **SEÇÕES:** Títulos e espaçamentos organizados.
-- **FORMULÁRIOS:** Campos com bordas suaves, legendas e foco personalizado.
-- **RODAPÉ:** Informações da ONG centralizadas com contraste de cor.
-
-### Recursos Utilizados
-- `display: flex;` e `flex-direction` para layout responsivo.  
-- Unidades relativas (`rem`) para garantir acessibilidade.  
-- Paleta de cores suaves (tons de **verde**, **azul-claro** e **cinza**).  
-- Fonte principal: [Cabin (Google Fonts)](https://fonts.google.com/specimen/Cabin).  
-- Imagens otimizadas e responsivas.  
+Todas compartilham o mesmo arquivo de estilo:  
+`css/style.css`
 
 ---
 
-## 💻 Tecnologias
-
-- **HTML5** (estrutura semântica)  
-- **CSS3** (estilização e responsividade)  
-- **VS Code**  
-- **Git & GitHub** (controle de versão e hospedagem)  
-
----
-
-## 🚀 Publicação
-
-O site pode ser acessado pelo **GitHub Pages**:
-
-👉 https://eduardovieirademiranda.github.io/ONG-MAOS-AMIGAS/
----
-
-## 👨‍💻 Autor
-
-**Eduardo Vieira de Miranda**  
-Aluno de Tecnologia da Informação — Cruzeiro do Sul Virtual  
-
+## 🎨 Design System
+- **Paleta de cores:** 8 tons definidos (azul primário, azul claro, cinza neutro e variações de fundo).  
+- **Tipografia:** Fonte [Cabin](https://fonts.google.com/specimen/Cabin) via Google Fonts.  
+- **Escala de espaçamento:** 8 → 16 → 24 → 32 → 48 → 64 px.  
+- **Cantos arredondados:** até 6 px nas imagens e 4 px nos botões.  
+- **Sombreamento leve:** aplicado em artigos e botões para dar profundidade.
 
 ---
 
-### 📚 Observação
-
-A estrutura do projeto segue o modelo exigido nas atividades da disciplina, contendo:
-
-- 8 páginas HTML semânticas  
-- Mais de 20 imagens  
-- Formulários com campos validados (CPF, CEP, telefone etc.)  
-- Responsividade e organização em seções comentadas  
-- Repositório versionado com branches por atividade (`atividade1`, `atividade2`)
-
----
+## 📐 Recursos Utilizados
+- **Flexbox** para alinhamentos no cabeçalho e nas seções.  
+- **Grid** em listas de opções e formulários.  
+- **Responsividade** com media queries até 768 px.  
+- **Elementos fixos e colantes (sticky):** cabeçalho sempre visível.  
+- **Foco e interação:** realce em inputs, hover em botõe
